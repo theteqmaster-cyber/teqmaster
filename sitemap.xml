@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+                            http://www.google.com/schemas/sitemap-image/1.1
+                            http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
-  <!-- Root Domain: Identity Hub -->
+  <!-- Master Identity Hub: mphathisi.com -->
   <url>
     <loc>https://mphathisi.com/</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mphathisi.com/mphathisi%20logo.png</image:loc>
+      <image:title>Mphathisi Ndlovu (The Teq-master) Logo</image:title>
+      <image:caption>Official logo and identity symbol of Mphathisi Ndlovu, Computer Science engineer at NUST Zimbabwe</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mphathisi.com/yallo%20image.png</image:loc>
+      <image:title>Yallo AI Learning Companion by Mphathisi Ndlovu</image:title>
+      <image:caption>Kid-Safe AI learning companion developed by Mphathisi Ndlovu</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mphathisi.com/safenet%20image.png</image:loc>
+      <image:title>SafeNet NUST Security System by Mphathisi Ndlovu</image:title>
+      <image:caption>Smart campus security system developed for NUST Zimbabwe by Mphathisi Ndlovu</image:caption>
+    </image:image>
   </url>
 
   <!-- Subdomain 1: Okotunes -->
