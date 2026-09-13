@@ -1,8 +1,9 @@
 /**
- * mphathisi.com — The Teq-master Identity Hub Engine
- * 1. Interactive Antigravity Mouse Particle Physics
- * 2. Light / Dark Theme Switcher & Persistence
- * 3. Category Filter & Copy-to-Clipboard Helpers
+ * MPHATHISI — Cyber-Minimalist Portal Engine
+ * 1. Theme Switcher & Persistence (Dark / Light)
+ * 2. Subtle Antigravity Particle Physics Canvas
+ * 3. Smooth Anchor Scroll Handling
+ * 4. Copy-to-Clipboard Direct Handshake
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,34 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Theme System
   initThemeSystem();
 
-  // Initialize Antigravity Mouse Particle Animation
-  initAntigravityParticles();
+  // Initialize Ambient Particle Animation
+  initAmbientParticles();
 
-  // Category Filtering for Projects Grid
-  const tabButtons = document.querySelectorAll('#projectCategoryTabs .tab-btn');
-  const projectCards = document.querySelectorAll('#projectsGrid .project-card');
-
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      const selectedCategory = button.getAttribute('data-category');
-
-      projectCards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        if (selectedCategory === 'all' || cardCategory === selectedCategory) {
-          card.style.display = 'flex';
-          card.style.animation = 'none';
-          // Trigger reflow to restart CSS animation smoothly
-          void card.offsetWidth;
-          card.style.animation = 'fadeIn 0.35s ease forwards';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
+  // Smooth scroll handler for anchor links
+  initSmoothScrolling();
 });
 
 /* ==========================================================================
@@ -73,16 +51,16 @@ function initThemeSystem() {
 }
 
 /* ==========================================================================
-   2. Interactive Antigravity Mouse Particle Canvas Animation
+   2. Subtle Ambient Antigravity Particle Canvas Animation
    ========================================================================== */
-function initAntigravityParticles() {
+function initAmbientParticles() {
   const canvas = document.getElementById('particleCanvas');
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
   let width, height;
   let particles = [];
-  const mouse = { x: -1000, y: -1000, radius: 160 };
+  const mouse = { x: -1000, y: -1000, radius: 140 };
 
   function resize() {
     width = canvas.width = window.innerWidth;
@@ -96,32 +74,32 @@ function initAntigravityParticles() {
       this.y = Math.random() * height;
       this.baseX = this.x;
       this.baseY = this.y;
-      this.size = Math.random() * 2.5 + 1.2;
-      this.vx = (Math.random() - 0.5) * 0.6;
-      this.vy = (Math.random() - 0.5) * 0.6;
-      this.density = (Math.random() * 20) + 10;
-      this.colorType = Math.random() > 0.5 ? 1 : 2;
+      this.size = Math.random() * 2 + 1;
+      this.vx = (Math.random() - 0.5) * 0.45;
+      this.vy = (Math.random() - 0.5) * 0.45;
+      this.density = (Math.random() * 15) + 8;
+      this.isEmerald = Math.random() > 0.4;
     }
 
     draw() {
       const isLight = document.documentElement.getAttribute('data-theme') === 'light';
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = this.colorType === 1
-        ? (isLight ? 'rgba(14, 116, 144, 0.7)' : 'rgba(6, 182, 212, 0.7)')
-        : (isLight ? 'rgba(109, 40, 217, 0.7)' : 'rgba(167, 139, 250, 0.7)');
+      ctx.fillStyle = this.isEmerald
+        ? (isLight ? 'rgba(5, 150, 105, 0.5)' : 'rgba(16, 185, 129, 0.45)')
+        : (isLight ? 'rgba(2, 132, 199, 0.45)' : 'rgba(6, 182, 212, 0.4)');
       ctx.fill();
     }
 
     update() {
-      // Natural ambient motion
+      // Gentle ambient drift
       this.baseX += this.vx;
       this.baseY += this.vy;
 
       if (this.baseX < 0 || this.baseX > width) this.vx *= -1;
       if (this.baseY < 0 || this.baseY > height) this.vy *= -1;
 
-      // Mouse Antigravity Interactive Physics
+      // Mouse Antigravity Interactivity
       const dx = mouse.x - this.x;
       const dy = mouse.y - this.y;
       const distance = Math.sqrt(dx * dx + dy * dy);
@@ -139,11 +117,11 @@ function initAntigravityParticles() {
       } else {
         if (this.x !== this.baseX) {
           const dx = this.x - this.baseX;
-          this.x -= dx * 0.05;
+          this.x -= dx * 0.04;
         }
         if (this.y !== this.baseY) {
           const dy = this.y - this.baseY;
-          this.y -= dy * 0.05;
+          this.y -= dy * 0.04;
         }
       }
     }
@@ -151,26 +129,26 @@ function initAntigravityParticles() {
 
   function createParticles() {
     particles = [];
-    const particleCount = Math.floor((width * height) / 18000);
-    for (let i = 0; i < Math.min(particleCount, 80); i++) {
+    const count = Math.min(Math.floor((width * height) / 22000), 55);
+    for (let i = 0; i < count; i++) {
       particles.push(new Particle());
     }
   }
 
   function connectParticles() {
     const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    const strokeColor = isLight ? 'rgba(14, 116, 144, ' : 'rgba(6, 182, 212, ';
+    const strokeColor = isLight ? 'rgba(5, 150, 105, ' : 'rgba(16, 185, 129, ';
 
     for (let a = 0; a < particles.length; a++) {
-      for (let b = a; b < particles.length; b++) {
+      for (let b = a + 1; b < particles.length; b++) {
         const dx = particles[a].x - particles[b].x;
         const dy = particles[a].y - particles[b].y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
-        if (distance < 120) {
-          const opacity = (1 - (distance / 120)) * 0.22;
+        if (distance < 110) {
+          const opacity = (1 - (distance / 110)) * 0.15;
           ctx.strokeStyle = strokeColor + opacity + ')';
-          ctx.lineWidth = 0.8;
+          ctx.lineWidth = 0.7;
           ctx.beginPath();
           ctx.moveTo(particles[a].x, particles[a].y);
           ctx.lineTo(particles[b].x, particles[b].y);
@@ -182,9 +160,9 @@ function initAntigravityParticles() {
 
   function animate() {
     ctx.clearRect(0, 0, width, height);
-    particles.forEach(particle => {
-      particle.update();
-      particle.draw();
+    particles.forEach(p => {
+      p.update();
+      p.draw();
     });
     connectParticles();
     requestAnimationFrame(animate);
@@ -206,7 +184,30 @@ function initAntigravityParticles() {
 }
 
 /* ==========================================================================
-   3. Copy Text to Clipboard Helper
+   3. Smooth Scrolling Helper
+   ========================================================================== */
+function initSmoothScrolling() {
+  const anchorLinks = document.querySelectorAll('a[href^="#"]');
+  anchorLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   4. Copy Text to Clipboard Helper
    ========================================================================== */
 function copyToClipboard(text, btnEl) {
   if (!navigator.clipboard) {
@@ -223,13 +224,15 @@ function copyToClipboard(text, btnEl) {
   if (btnEl) {
     const originalText = btnEl.textContent;
     btnEl.textContent = 'Copied! ✓';
-    btnEl.style.color = '#34d399';
-    btnEl.style.borderColor = '#34d399';
+    btnEl.style.backgroundColor = '#10b981';
+    btnEl.style.borderColor = '#10b981';
+    btnEl.style.color = '#030611';
 
     setTimeout(() => {
       btnEl.textContent = originalText;
-      btnEl.style.color = '';
+      btnEl.style.backgroundColor = '';
       btnEl.style.borderColor = '';
+      btnEl.style.color = '';
     }, 2000);
   }
 }
