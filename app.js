@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Ambient Particle Animation
   initAmbientParticles();
 
+  // Initialize Kinetic Entropy-to-Order Title Animation
+  initKineticTitleAnimation();
+
   // Initialize Smooth Page Transitions
   initPageTransitions();
 });
@@ -250,4 +253,103 @@ function copyToClipboard(text, btnEl) {
       btnEl.style.color = '';
     }, 2000);
   }
+}
+
+/* ==========================================================================
+   5. Kinetic "Entropy-to-Order" Letter Rearranging Animation
+   ========================================================================== */
+function initKineticTitleAnimation() {
+  const title = document.getElementById('kineticHeroTitle');
+  if (!title) return;
+
+  const letters = title.querySelectorAll('.kinetic-letter');
+  if (!letters.length) return;
+
+  let isAnimating = false;
+
+  function runEntropySequence() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    // Phase 1: Scatter each letter into chaotic coordinates
+    letters.forEach((letter, index) => {
+      const dirX = index % 2 === 0 ? -1 : 1;
+      const dirY = index % 3 === 0 ? -1 : 1;
+      const xOffset = dirX * (45 + Math.random() * 85);
+      const yOffset = dirY * (50 + Math.random() * 75);
+      const rotateDeg = (Math.random() - 0.5) * 55;
+      const scaleVal = 0.55 + Math.random() * 0.75;
+
+      letter.style.transition = 'none';
+      letter.style.transform = `translate3d(${xOffset}px, ${yOffset}px, 0) rotate(${rotateDeg}deg) scale(${scaleVal})`;
+      letter.style.opacity = '0';
+      letter.style.filter = 'blur(8px)';
+      letter.style.color = '#38bdf8'; // Soft cyber cyan during entropy
+      letter.classList.remove('locked-in');
+    });
+
+    // Trigger reflow
+    void title.offsetWidth;
+
+    // Phase 2: Converge and magnetic snap with spring curve
+    setTimeout(() => {
+      letters.forEach((letter, index) => {
+        const delay = index * 55; // Staggered arrival wave
+        setTimeout(() => {
+          letter.style.transition = 'transform 0.9s cubic-bezier(0.18, 1.45, 0.35, 1), opacity 0.75s ease, filter 0.75s ease, color 0.4s ease';
+          letter.style.transform = 'translate3d(0, 0, 0) rotate(0deg) scale(1)';
+          letter.style.opacity = '1';
+          letter.style.filter = 'blur(0)';
+          letter.style.color = '';
+        }, delay);
+      });
+
+      // Phase 3: Emerald Lock-in Laser Pulse across letters
+      const totalArrivalDuration = (letters.length * 55) + 850;
+      setTimeout(() => {
+        letters.forEach((letter, index) => {
+          setTimeout(() => {
+            letter.classList.add('locked-in');
+            setTimeout(() => {
+              letter.classList.remove('locked-in');
+            }, 550);
+          }, index * 45);
+        });
+
+        setTimeout(() => {
+          isAnimating = false;
+        }, letters.length * 45 + 600);
+      }, totalArrivalDuration);
+
+    }, 80);
+  }
+
+  // Trigger on load
+  runEntropySequence();
+
+  // Click on title to re-trigger the assembly sequence anytime
+  title.addEventListener('click', () => {
+    runEntropySequence();
+  });
+
+  // Micro-interaction on individual letter hover
+  letters.forEach(letter => {
+    letter.addEventListener('mouseenter', () => {
+      if (!isAnimating) {
+        letter.style.transition = 'transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease, text-shadow 0.2s ease';
+        letter.style.transform = 'translateY(-12px) scale(1.18)';
+        letter.style.color = '#10b981';
+        letter.style.textShadow = '0 0 16px rgba(16, 185, 129, 0.7)';
+      }
+    });
+
+    letter.addEventListener('mouseleave', () => {
+      if (!isAnimating) {
+        letter.style.transition = 'transform 0.35s cubic-bezier(0.18, 1, 0.35, 1), color 0.3s ease, text-shadow 0.3s ease';
+        letter.style.transform = 'translate3d(0, 0, 0) rotate(0deg) scale(1)';
+        letter.style.color = '';
+        letter.style.textShadow = '';
+      }
+    });
+  });
 }

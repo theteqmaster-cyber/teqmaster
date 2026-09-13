@@ -298,22 +298,47 @@ body.page-exiting .site-container {
   width: 100%;
 }
 
-/* Large Wide-Tracked Geometric Title */
+/* Large Wide-Tracked Geometric Title with Kinetic Letters */
 .portal-title {
   font-size: clamp(2.4rem, 6.5vw, 4.4rem);
   font-weight: 600;
-  letter-spacing: 0.32em;
-  text-indent: 0.32em; /* Offsets trailing letter-spacing to ensure absolute center */
   text-transform: uppercase;
   color: #f1f5f9;
   margin-bottom: 1.5rem;
   line-height: 1.15;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  user-select: none;
 }
 
 [data-theme="light"] .portal-title {
   color: #0f172a;
   text-shadow: none;
+}
+
+.kinetic-letter {
+  display: inline-block;
+  position: relative;
+  will-change: transform, opacity, filter;
+  margin-right: 0.32em;
+  transition: transform 0.85s cubic-bezier(0.18, 1.35, 0.35, 1),
+              opacity 0.75s ease,
+              filter 0.75s ease,
+              color 0.3s ease,
+              text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.kinetic-letter:last-child {
+  margin-right: 0;
+}
+
+.kinetic-letter.locked-in {
+  color: var(--accent-emerald) !important;
+  text-shadow: 0 0 16px rgba(16, 185, 129, 0.85), 0 0 32px rgba(16, 185, 129, 0.45) !important;
 }
 
 /* Minimal Authoritative Subtitle */
