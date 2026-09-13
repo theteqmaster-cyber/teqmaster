@@ -30,6 +30,30 @@
     </image:image>
   </url>
 
+  <!-- Page: Projects & Subdomain Ecosystem -->
+  <url>
+    <loc>https://mphathisi.com/projects.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <!-- Page: Skills & Core Engineering Architectures -->
+  <url>
+    <loc>https://mphathisi.com/skills.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Page: Direct Handshake & Contact -->
+  <url>
+    <loc>https://mphathisi.com/contact.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Subdomain 1: Okotunes (Spatial Audio Streamer) -->
   <url>
     <loc>https://okotunes.mphathisi.com/</loc>

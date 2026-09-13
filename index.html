@@ -191,7 +191,7 @@
   }
   </script>
 </head>
-<body>
+<body class="portal-body">
 
   <!-- Ambient Interactive Particle Canvas -->
   <canvas id="particleCanvas" aria-hidden="true"></canvas>
@@ -200,20 +200,20 @@
   <div class="cyber-glow-aura" aria-hidden="true"></div>
 
   <!-- Master Site Container -->
-  <div class="site-container">
+  <div class="site-container portal-container">
 
     <!-- Top Minimal Navigation -->
     <header class="portal-header">
       <nav class="portal-nav" aria-label="Main Navigation">
-        <a href="https://mphathisi.com" class="portal-brand">
+        <a href="index.html" class="portal-brand">
           <img src="mphathisi logo.png" alt="Mphathisi Logo" class="brand-logo-img">
           <span class="brand-title">MPHATHISI</span>
         </a>
 
         <div class="portal-nav-links">
-          <a href="#subdomains" class="nav-link">Projects</a>
-          <a href="#initiatives" class="nav-link">Skills</a>
-          <a href="#contact" class="nav-link">Contact</a>
+          <a href="projects.html" class="nav-link">Projects</a>
+          <a href="skills.html" class="nav-link">Skills</a>
+          <a href="contact.html" class="nav-link">Contact</a>
         </div>
 
         <div class="portal-nav-actions">
@@ -235,10 +235,8 @@
       </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-
-      <!-- The Cyber-Nexus Hero Portal (Matching Screenshot Reference) -->
+    <!-- Main Hero Portal (Framed Viewport) -->
+    <main class="portal-main">
       <section class="portal-hero">
         <div class="hero-inner">
 
@@ -253,35 +251,35 @@
           <!-- The 3 Gateway Cards -->
           <div class="gateway-cards">
 
-            <!-- Card 1: Projects (Ecosystem & Subdomains) -->
-            <a href="#subdomains" class="gateway-card">
+            <!-- Card 1: Projects -->
+            <a href="projects.html" class="gateway-card">
               <div class="card-accent-line"></div>
               <h2 class="card-title">Projects</h2>
               <p class="card-desc">View the repository of digital architecture and legacy deployments.</p>
               <div class="card-footer-link">
-                <span>Explore</span>
+                <span>View Projects</span>
                 <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
             </a>
 
-            <!-- Card 2: Skills (Architectures & Systems) -->
-            <a href="#initiatives" class="gateway-card">
+            <!-- Card 2: Skills -->
+            <a href="skills.html" class="gateway-card">
               <div class="card-accent-line"></div>
               <h2 class="card-title">Skills</h2>
               <p class="card-desc">Systems engineering, network protocols, and cryptographic frameworks.</p>
               <div class="card-footer-link">
-                <span>Discover</span>
+                <span>Explore Skills</span>
                 <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
             </a>
 
-            <!-- Card 3: Contact (Secure Handshake) -->
-            <a href="#contact" class="gateway-card">
+            <!-- Card 3: Contact -->
+            <a href="contact.html" class="gateway-card">
               <div class="card-accent-line"></div>
               <h2 class="card-title">Contact</h2>
               <p class="card-desc">Initiate a secure handshake via encrypted channels.</p>
               <div class="card-footer-link">
-                <span>Connect</span>
+                <span>Direct Handshake</span>
                 <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </div>
             </a>
@@ -304,214 +302,6 @@
 
         </div>
       </section>
-
-      <!-- Section 1: Subdomains & Deployments (#subdomains) -->
-      <section id="subdomains" class="content-section">
-        <div class="section-heading">
-          <div class="section-tag">DIGITAL ECOSYSTEM</div>
-          <h2 class="section-title">Active Subdomain Deployments</h2>
-          <p class="section-desc">Production web services and specialized environments live under mphathisi.com.</p>
-        </div>
-
-        <div class="cards-grid subdomains-grid">
-
-          <!-- Subdomain 1: Okotunes -->
-          <a href="https://okotunes.mphathisi.com" target="_blank" rel="noopener" class="nexus-card">
-            <div class="nexus-card-header">
-              <span class="status-indicator"><span class="status-dot"></span> LIVE</span>
-              <span class="nexus-tag">SPATIAL AUDIO</span>
-            </div>
-            <h3 class="nexus-card-title">okotunes.mphathisi.com</h3>
-            <p class="nexus-card-desc">High-performance audio streaming engine with 3D binaural positioning and Cloudflare R2 zero-egress storage.</p>
-            <div class="nexus-footer">
-              <span class="nexus-meta">PHP 8.2 • Web Audio DSP</span>
-              <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </a>
-
-          <!-- Subdomain 2: iDevMight -->
-          <a href="https://idevmight.mphathisi.com" target="_blank" rel="noopener" class="nexus-card">
-            <div class="nexus-card-header">
-              <span class="status-indicator"><span class="status-dot"></span> LIVE</span>
-              <span class="nexus-tag">DEV HUB & AI</span>
-            </div>
-            <h3 class="nexus-card-title">idevmight.mphathisi.com</h3>
-            <p class="nexus-card-desc">Developer tutorials and architectural guides hosting the kid-safe Yallo AI interactive learning companion.</p>
-            <div class="nexus-footer">
-              <span class="nexus-meta">React • Web Speech AI</span>
-              <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </a>
-
-          <!-- Subdomain 3: Study Break -->
-          <a href="https://studybreak.mphathisi.com" target="_blank" rel="noopener" class="nexus-card">
-            <div class="nexus-card-header">
-              <span class="status-indicator"><span class="status-dot"></span> LIVE</span>
-              <span class="nexus-tag">PRODUCTIVITY</span>
-            </div>
-            <h3 class="nexus-card-title">studybreak.mphathisi.com</h3>
-            <p class="nexus-card-desc">Kyūkei (休憩) intensive study sprint manager and cognitive break timer engineered for deep focus.</p>
-            <div class="nexus-footer">
-              <span class="nexus-meta">PWA • LocalStorage Engine</span>
-              <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </a>
-
-          <!-- Subdomain 4: Notak -->
-          <a href="https://notak.mphathisi.com" target="_blank" rel="noopener" class="nexus-card">
-            <div class="nexus-card-header">
-              <span class="status-indicator"><span class="status-dot"></span> LIVE</span>
-              <span class="nexus-tag">WORKSPACE</span>
-            </div>
-            <h3 class="nexus-card-title">notak.mphathisi.com</h3>
-            <p class="nexus-card-desc">Minimalist, distraction-free markdown workspace and personal knowledge capture environment.</p>
-            <div class="nexus-footer">
-              <span class="nexus-meta">Markdown • React</span>
-              <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </a>
-
-          <!-- Subdomain 5: Interactive CV -->
-          <a href="https://cv.mphathisi.com" target="_blank" rel="noopener" class="nexus-card">
-            <div class="nexus-card-header">
-              <span class="status-indicator"><span class="status-dot"></span> LIVE</span>
-              <span class="nexus-tag">CREDENTIALS</span>
-            </div>
-            <h3 class="nexus-card-title">cv.mphathisi.com</h3>
-            <p class="nexus-card-desc">Comprehensive curriculum vitae, academic credentials at NUST Zimbabwe, and SafeNet security publications.</p>
-            <div class="nexus-footer">
-              <span class="nexus-meta">NUST CS • System Design</span>
-              <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </div>
-          </a>
-
-        </div>
-      </section>
-
-      <!-- Section 2: Core Engineering Initiatives (#initiatives) -->
-      <section id="initiatives" class="content-section">
-        <div class="section-heading">
-          <div class="section-tag">CORE ARCHITECTURES</div>
-          <h2 class="section-title">Key Engineering Initiatives</h2>
-          <p class="section-desc">High-level software systems engineered for security, acoustics, and interactive education.</p>
-        </div>
-
-        <div class="cards-grid initiatives-grid">
-
-          <!-- Initiative 1: Yallo AI Companion -->
-          <article class="nexus-card initiative-card">
-            <div class="nexus-card-header">
-              <span class="badge-emerald">COMMUNITY IMPACT</span>
-              <span class="nexus-tag">EDTECH AI</span>
-            </div>
-            <h3 class="nexus-card-title">Yallo AI Learning Companion</h3>
-            <p class="nexus-card-desc">Child-safe voice synthesis, interactive speech recognition, and visual canvas engine built for interactive youth education.</p>
-            <div class="nexus-footer">
-              <span class="nexus-meta">Web Speech API • Canvas Cognition</span>
-              <a href="https://idevmight.mphathisi.com" target="_blank" rel="noopener" class="card-inline-link">Launch Demo →</a>
-            </div>
-          </article>
-
-          <!-- Initiative 2: SafeNet NUST -->
-          <article class="nexus-card initiative-card">
-            <div class="nexus-card-header">
-              <span class="badge-emerald">COMMUNITY IMPACT</span>
-              <span class="nexus-tag">IOT & SECURITY</span>
-            </div>
-            <h3 class="nexus-card-title">SafeNet Campus Security</h3>
-            <p class="nexus-card-desc">Smart campus monitoring architecture, telemetry verification, and IoT safety protocols designed for NUST infrastructure.</p>
-            <div class="nexus-footer">
-              <span class="nexus-meta">IoT Verification • NUST Zimbabwe</span>
-              <a href="https://cv.mphathisi.com" target="_blank" rel="noopener" class="card-inline-link">View Overview →</a>
-            </div>
-          </article>
-
-          <!-- Initiative 3: MSpot Music Streamer -->
-          <article class="nexus-card initiative-card">
-            <div class="nexus-card-header">
-              <span class="badge-cyan">ACOUSTIC DSP</span>
-              <span class="nexus-tag">AUDIO ENGINE</span>
-            </div>
-            <h3 class="nexus-card-title">MSpot Spatial Audio Streamer</h3>
-            <p class="nexus-card-desc">Local streaming environment featuring 3D binaural soundstage positioning, surround virtualization, and Web Audio API filters.</p>
-            <div class="nexus-footer">
-              <span class="nexus-meta">Spatial 3D DSP • Cloudflare R2</span>
-              <a href="https://okotunes.mphathisi.com" target="_blank" rel="noopener" class="card-inline-link">Stream →</a>
-            </div>
-          </article>
-
-          <!-- Initiative 4: Glopkit UI Bible -->
-          <article class="nexus-card initiative-card">
-            <div class="nexus-card-header">
-              <span class="badge-cyan">DESIGN ARCHITECTURE</span>
-              <span class="nexus-tag">SYSTEM TOKENS</span>
-            </div>
-            <h3 class="nexus-card-title">Glopkit Cyber-Glass UI</h3>
-            <p class="nexus-card-desc">Design token system, aesthetic glassmorphism rules, and high-performance frontend baselines for modern applications.</p>
-            <div class="nexus-footer">
-              <span class="nexus-meta">CSS Tokens • Glass System</span>
-              <a href="https://github.com/theteqmaster-cyber" target="_blank" rel="noopener" class="card-inline-link">GitHub Code →</a>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- Section 3: Secure Handshake & Contact (#contact) -->
-      <section id="contact" class="content-section">
-        <div class="section-heading">
-          <div class="section-tag">DIRECT CHANNELS</div>
-          <h2 class="section-title">Initiate a Handshake</h2>
-          <p class="section-desc">Reach out directly for software engineering collaborations, architectural inquiries, or partnerships.</p>
-        </div>
-
-        <div class="contact-grid">
-
-          <!-- Email 1 -->
-          <div class="contact-card">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="contact-details">
-              <span class="contact-label">Primary Official Email</span>
-              <a href="mailto:dev@mphathisi.com" class="contact-address">dev@mphathisi.com</a>
-            </div>
-            <button class="copy-btn" onclick="copyToClipboard('dev@mphathisi.com', this)">
-              Copy Email
-            </button>
-          </div>
-
-          <!-- Email 2 -->
-          <div class="contact-card">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h11"/><polyline points="22 6 12 13 2 6"/><path d="M19 16v6"/><path d="M16 19h6"/></svg>
-            </div>
-            <div class="contact-details">
-              <span class="contact-label">Direct Gmail Account</span>
-              <a href="mailto:theteqmaster@gmail.com" class="contact-address">theteqmaster@gmail.com</a>
-            </div>
-            <button class="copy-btn" onclick="copyToClipboard('theteqmaster@gmail.com', this)">
-              Copy Email
-            </button>
-          </div>
-
-          <!-- GitHub Hub -->
-          <div class="contact-card">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </div>
-            <div class="contact-details">
-              <span class="contact-label">GitHub Repository Hub</span>
-              <a href="https://github.com/theteqmaster-cyber" target="_blank" rel="noopener" class="contact-address">github.com/theteqmaster-cyber</a>
-            </div>
-            <a href="https://github.com/theteqmaster-cyber" target="_blank" rel="noopener" class="visit-link-btn">
-              Open GitHub →
-            </a>
-          </div>
-
-        </div>
-      </section>
-
     </main>
 
     <!-- Master Minimalist Footer -->
@@ -524,9 +314,9 @@
         </div>
 
         <div class="footer-center">
-          <a href="#subdomains">Projects</a>
-          <a href="#initiatives">Skills</a>
-          <a href="#contact">Contact</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html">Contact</a>
           <a href="https://github.com/theteqmaster-cyber" target="_blank" rel="noopener">GitHub</a>
         </div>
 
@@ -538,7 +328,7 @@
 
   </div>
 
-  <!-- Interactivity & Particle Physics Script -->
+  <!-- Interactivity & Page Transition Script -->
   <script src="app.js"></script>
 </body>
 </html>

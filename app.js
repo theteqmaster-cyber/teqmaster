@@ -1,8 +1,8 @@
 /**
- * MPHATHISI — Cyber-Minimalist Portal Engine
+ * MPHATHISI — Multi-Page Cyber-Portal Engine
  * 1. Theme Switcher & Persistence (Dark / Light)
- * 2. Subtle Antigravity Particle Physics Canvas
- * 3. Smooth Anchor Scroll Handling
+ * 2. Subtle Antigravity Ambient Particle Physics
+ * 3. Cinematic Page Fade Transitions
  * 4. Copy-to-Clipboard Direct Handshake
  */
 
@@ -19,8 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Ambient Particle Animation
   initAmbientParticles();
 
-  // Smooth scroll handler for anchor links
-  initSmoothScrolling();
+  // Initialize Smooth Page Transitions
+  initPageTransitions();
+});
+
+// Remove exiting class on bfcache restore
+window.addEventListener('pageshow', () => {
+  document.body.classList.remove('page-exiting');
 });
 
 /* ==========================================================================
@@ -75,8 +80,8 @@ function initAmbientParticles() {
       this.baseX = this.x;
       this.baseY = this.y;
       this.size = Math.random() * 2 + 1;
-      this.vx = (Math.random() - 0.5) * 0.45;
-      this.vy = (Math.random() - 0.5) * 0.45;
+      this.vx = (Math.random() - 0.5) * 0.4;
+      this.vy = (Math.random() - 0.5) * 0.4;
       this.density = (Math.random() * 15) + 8;
       this.isEmerald = Math.random() > 0.4;
     }
@@ -86,8 +91,8 @@ function initAmbientParticles() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
       ctx.fillStyle = this.isEmerald
-        ? (isLight ? 'rgba(5, 150, 105, 0.5)' : 'rgba(16, 185, 129, 0.45)')
-        : (isLight ? 'rgba(2, 132, 199, 0.45)' : 'rgba(6, 182, 212, 0.4)');
+        ? (isLight ? 'rgba(5, 150, 105, 0.45)' : 'rgba(16, 185, 129, 0.4)')
+        : (isLight ? 'rgba(2, 132, 199, 0.4)' : 'rgba(6, 182, 212, 0.35)');
       ctx.fill();
     }
 
@@ -184,25 +189,35 @@ function initAmbientParticles() {
 }
 
 /* ==========================================================================
-   3. Smooth Scrolling Helper
+   3. Cinematic Page Transitions
    ========================================================================== */
-function initSmoothScrolling() {
-  const anchorLinks = document.querySelectorAll('a[href^="#"]');
-  anchorLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const targetId = link.getAttribute('href');
-      if (targetId && targetId !== '#') {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
-          window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
-        }
-      }
-    });
+function initPageTransitions() {
+  const internalLinks = document.querySelectorAll('a[href]');
+
+  internalLinks.forEach(link => {
+    const href = link.getAttribute('href');
+
+    // Only apply transition to internal relative pages (.html)
+    if (
+      href &&
+      !href.startsWith('http') &&
+      !href.startsWith('#') &&
+      !href.startsWith('mailto:') &&
+      !link.hasAttribute('target') &&
+      (href.endsWith('.html') || href === '/' || !href.includes('.'))
+    ) {
+      link.addEventListener('click', (e) => {
+        // Allow ctrl/cmd + click to open in new tab
+        if (e.metaKey || e.ctrlKey) return;
+
+        e.preventDefault();
+        document.body.classList.add('page-exiting');
+
+        setTimeout(() => {
+          window.location.href = href;
+        }, 180);
+      });
+    }
   });
 }
 
