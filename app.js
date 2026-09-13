@@ -272,18 +272,19 @@ function initKineticTitleAnimation() {
     isAnimating = true;
 
     // Phase 1: Scatter each letter into chaotic coordinates
+    // Visible opacity so the user clearly witnesses the chaotic state before convergence
     letters.forEach((letter, index) => {
       const dirX = index % 2 === 0 ? -1 : 1;
       const dirY = index % 3 === 0 ? -1 : 1;
-      const xOffset = dirX * (45 + Math.random() * 85);
-      const yOffset = dirY * (50 + Math.random() * 75);
-      const rotateDeg = (Math.random() - 0.5) * 55;
-      const scaleVal = 0.55 + Math.random() * 0.75;
+      const xOffset = dirX * (50 + Math.random() * 90);
+      const yOffset = dirY * (55 + Math.random() * 85);
+      const rotateDeg = (Math.random() - 0.5) * 65;
+      const scaleVal = 0.6 + Math.random() * 0.7;
 
       letter.style.transition = 'none';
       letter.style.transform = `translate3d(${xOffset}px, ${yOffset}px, 0) rotate(${rotateDeg}deg) scale(${scaleVal})`;
-      letter.style.opacity = '0';
-      letter.style.filter = 'blur(8px)';
+      letter.style.opacity = '0.45';
+      letter.style.filter = 'blur(6px)';
       letter.style.color = '#38bdf8'; // Soft cyber cyan during entropy
       letter.classList.remove('locked-in');
     });
@@ -291,12 +292,12 @@ function initKineticTitleAnimation() {
     // Trigger reflow
     void title.offsetWidth;
 
-    // Phase 2: Converge and magnetic snap with spring curve
+    // Phase 2: Hold chaotic state for 220ms, then smoothly converge
     setTimeout(() => {
       letters.forEach((letter, index) => {
-        const delay = index * 55; // Staggered arrival wave
+        const delay = index * 95; // Slower, rhythmic staggered arrival wave
         setTimeout(() => {
-          letter.style.transition = 'transform 0.9s cubic-bezier(0.18, 1.45, 0.35, 1), opacity 0.75s ease, filter 0.75s ease, color 0.4s ease';
+          letter.style.transition = 'transform 1.35s cubic-bezier(0.16, 1.25, 0.35, 1), opacity 1.1s ease, filter 1.1s ease, color 0.5s ease';
           letter.style.transform = 'translate3d(0, 0, 0) rotate(0deg) scale(1)';
           letter.style.opacity = '1';
           letter.style.filter = 'blur(0)';
@@ -305,23 +306,23 @@ function initKineticTitleAnimation() {
       });
 
       // Phase 3: Emerald Lock-in Laser Pulse across letters
-      const totalArrivalDuration = (letters.length * 55) + 850;
+      const totalArrivalDuration = (letters.length * 95) + 1300;
       setTimeout(() => {
         letters.forEach((letter, index) => {
           setTimeout(() => {
             letter.classList.add('locked-in');
             setTimeout(() => {
               letter.classList.remove('locked-in');
-            }, 550);
-          }, index * 45);
+            }, 650);
+          }, index * 60);
         });
 
         setTimeout(() => {
           isAnimating = false;
-        }, letters.length * 45 + 600);
+        }, letters.length * 60 + 700);
       }, totalArrivalDuration);
 
-    }, 80);
+    }, 220);
   }
 
   // Trigger on load
