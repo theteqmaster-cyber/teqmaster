@@ -385,6 +385,17 @@ body {
   50% { opacity: 0.4; transform: scale(1.3); }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .gk-badge-cyan {
   background: rgba(6, 182, 212, 0.18);
   color: var(--gk-accent-primary);

@@ -12,6 +12,7 @@
   <meta name="author" content="Mphathisi Ndlovu">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://mphathisi.com">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://mphathisi.com/sitemap.xml">
 
   <!-- Open Graph / Facebook / LinkedIn Meta Tags -->
   <meta property="og:type" content="profile">
@@ -40,7 +41,7 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- JSON-LD Structured Data Schema -->
+  <!-- JSON-LD Structured Data Schema (Master Hub & Subdomain Entity Indexing) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -91,11 +92,11 @@
         ],
         "sameAs": [
           "https://github.com/theteqmaster-cyber",
-          "https://cv.mphathisi.com",
           "https://okotunes.mphathisi.com",
           "https://idevmight.mphathisi.com",
           "https://studybreak.mphathisi.com",
-          "https://notak.mphathisi.com"
+          "https://notak.mphathisi.com",
+          "https://cv.mphathisi.com"
         ]
       },
       {
@@ -107,7 +108,84 @@
         "publisher": {
           "@id": "https://mphathisi.com/#person"
         },
-        "inLanguage": "en-US"
+        "inLanguage": "en-US",
+        "hasPart": [
+          {
+            "@type": "WebSite",
+            "@id": "https://okotunes.mphathisi.com/#website",
+            "url": "https://okotunes.mphathisi.com",
+            "name": "Okotunes MSpot Spatial Audio Streamer",
+            "description": "High-performance local music streamer with 3D spatial DSP and Cloudflare R2"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://idevmight.mphathisi.com/#website",
+            "url": "https://idevmight.mphathisi.com",
+            "name": "iDevMight Developer Hub & Yallo AI",
+            "description": "Developer tutorial platform and kid-safe Yallo AI companion engine"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://studybreak.mphathisi.com/#website",
+            "url": "https://studybreak.mphathisi.com",
+            "name": "Study Break Productivity App",
+            "description": "PWA pomodoro & intensive study session break timer"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://notak.mphathisi.com/#website",
+            "url": "https://notak.mphathisi.com",
+            "name": "Notak Markdown Workspace",
+            "description": "Distraction-free markdown note-taking environment"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://cv.mphathisi.com/#website",
+            "url": "https://cv.mphathisi.com",
+            "name": "Mphathisi Ndlovu Interactive CV & SafeNet Report",
+            "description": "Interactive curriculum vitae and NUST SafeNet security report"
+          }
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Okotunes Audio Streamer",
+        "operatingSystem": "Web Browser",
+        "applicationCategory": "MultimediaApplication",
+        "url": "https://okotunes.mphathisi.com",
+        "author": { "@id": "https://mphathisi.com/#person" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Yallo AI Learning Companion",
+        "operatingSystem": "Web Browser",
+        "applicationCategory": "EducationalApplication",
+        "url": "https://idevmight.mphathisi.com",
+        "author": { "@id": "https://mphathisi.com/#person" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "SafeNet NUST Security System",
+        "operatingSystem": "Web Browser",
+        "applicationCategory": "SecurityApplication",
+        "url": "https://cv.mphathisi.com",
+        "author": { "@id": "https://mphathisi.com/#person" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Study Break Productivity App",
+        "operatingSystem": "Web Browser",
+        "applicationCategory": "ProductivityApplication",
+        "url": "https://studybreak.mphathisi.com",
+        "author": { "@id": "https://mphathisi.com/#person" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Notak Markdown Workspace",
+        "operatingSystem": "Web Browser",
+        "applicationCategory": "UtilitiesApplication",
+        "url": "https://notak.mphathisi.com",
+        "author": { "@id": "https://mphathisi.com/#person" }
       }
     ]
   }
@@ -519,7 +597,7 @@
         <div class="color-cards-grid" id="projectsGrid">
 
           <!-- Project 1: Yallo AI (Community Impact) -->
-          <article class="color-card card-orange" data-category="tools">
+          <article class="color-card project-card card-orange" data-category="tools">
             <div class="project-card-badge" style="color: #10b981;">COMMUNITY IMPACT DRIVEN</div>
             <h3 class="color-card-title">Yallo Kid-Safe Companion</h3>
             <p class="color-card-desc">Interactive AI learning companion using Web Speech API, voice recognition, and HTML5 canvas for children's education.</p>
@@ -534,7 +612,7 @@
           </article>
 
           <!-- Project 2: SafeNet NUST (Community Impact) -->
-          <article class="color-card card-orange" data-category="campus">
+          <article class="color-card project-card card-orange" data-category="campus">
             <div class="project-card-badge" style="color: #10b981;">COMMUNITY IMPACT DRIVEN</div>
             <h3 class="color-card-title">SafeNet Security System</h3>
             <p class="color-card-desc">Smart campus security system, SAD project report, and IoT monitoring architecture developed for NUST.</p>
@@ -549,7 +627,7 @@
           </article>
 
           <!-- Project 3: Glopkit -->
-          <article class="color-card card-cyan" data-category="design">
+          <article class="color-card project-card card-cyan" data-category="design">
             <div class="project-card-badge">UI BIBLE SYSTEM</div>
             <h3 class="color-card-title">Glopkit AI UI Bible</h3>
             <p class="color-card-desc">Cyber-Glass design system, token engine, and aesthetic rulebook elevating Web UI baselines for AI agents.</p>
@@ -564,7 +642,7 @@
           </article>
 
           <!-- Project 4: MSpot -->
-          <article class="color-card card-violet" data-category="audio">
+          <article class="color-card project-card card-violet" data-category="audio">
             <div class="project-card-badge">SPATIAL AUDIO DSP</div>
             <h3 class="color-card-title">MSpot Music Streamer</h3>
             <p class="color-card-desc">Homelab local music streamer featuring 3D binaural positioning, 5.1/7.1 surround virtualizer, and Web Audio DSP.</p>
@@ -578,7 +656,7 @@
           </article>
 
           <!-- Project 5: MBK Studio -->
-          <article class="color-card card-pink" data-category="tools">
+          <article class="color-card project-card card-pink" data-category="tools">
             <div class="project-card-badge">AUTOMATED AI VIDEO</div>
             <h3 class="color-card-title">MBK Studio Engine</h3>
             <p class="color-card-desc">Automated AI video storytelling, voice synthesis, subtitle rendering, and production suite built with Python and FFmpeg.</p>
@@ -593,7 +671,7 @@
           </article>
 
           <!-- Project 6: PRUTUS -->
-          <article class="color-card card-cyan" data-category="tools">
+          <article class="color-card project-card card-cyan" data-category="tools">
             <div class="project-card-badge">FINTECH & COMMERCE</div>
             <h3 class="color-card-title">PRUTUS Merchant OS</h3>
             <p class="color-card-desc">Merchant operating system featuring multi-currency payment handling, receipt printing, and retail stock management.</p>
@@ -607,7 +685,7 @@
           </article>
 
           <!-- Project 7: cportal -->
-          <article class="color-card card-violet" data-category="campus">
+          <article class="color-card project-card card-violet" data-category="campus">
             <div class="project-card-badge">EDTECH MANAGEMENT</div>
             <h3 class="color-card-title">cportal School Portal</h3>
             <p class="color-card-desc">Secondary school and student management portal with gradebooks, attendance tracking, and report card generation.</p>
@@ -621,7 +699,7 @@
           </article>
 
           <!-- Project 8: Uptime Service Monitor -->
-          <article class="color-card card-pink" data-category="tools">
+          <article class="color-card project-card card-pink" data-category="tools">
             <div class="project-card-badge">INFRASTRUCTURE MONITOR</div>
             <h3 class="color-card-title">Uptime Health Probe</h3>
             <p class="color-card-desc">Automated web service health probing dashboard continuously checking latency and status for all subdomains.</p>

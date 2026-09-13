@@ -1,4 +1,28 @@
 User-agent: *
 Allow: /
 
+# Allow indexing for all major search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Master Sitemap (Includes Root & Subdomains: okotunes, idevmight, studybreak, notak, cv)
 Sitemap: https://mphathisi.com/sitemap.xml
+
+# Master Identity Host
+Host: https://mphathisi.com
+

@@ -33,7 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const cardCategory = card.getAttribute('data-category');
         if (selectedCategory === 'all' || cardCategory === selectedCategory) {
           card.style.display = 'flex';
-          card.style.animation = 'fadeIn 0.3s ease forwards';
+          card.style.animation = 'none';
+          // Trigger reflow to restart CSS animation smoothly
+          void card.offsetWidth;
+          card.style.animation = 'fadeIn 0.35s ease forwards';
         } else {
           card.style.display = 'none';
         }
