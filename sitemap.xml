@@ -54,6 +54,14 @@
     <priority>0.85</priority>
   </url>
 
+  <!-- Page: ZIMKNOWS Sources, Slide Deck & Media -->
+  <url>
+    <loc>https://mphathisi.com/sources.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+
   <!-- Subdomain 1: Okotunes (Spatial Audio Streamer) -->
   <url>
     <loc>https://okotunes.mphathisi.com/</loc>
