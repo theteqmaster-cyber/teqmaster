@@ -1,5 +1,5 @@
 /**
- * MPHATHISI — Multi-Page Cyber-Portal Engine
+ * M.P.A.S — Multi-Page Cyber-Portal Engine
  * 1. Theme Switcher & Persistence (Dark / Light)
  * 2. Subtle Antigravity Ambient Particle Physics
  * 3. Cinematic Page Fade Transitions
