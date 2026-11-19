@@ -1,6 +1,6 @@
 /* ==========================================================================
-   ZIMKNOWS — Cyber-Minimalist Portal Design System
-   Multi-Page Architecture with Cinematic View Transitions
+   MPHATHISI — Minimalist Personal Portal Design System
+   Clean, Fast, Multi-Page Architecture
    ========================================================================== */
 
 /* Modern View Transition Navigation */
@@ -118,11 +118,11 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  animation: pageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: pageFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 body.page-exiting .site-container {
-  animation: pageFadeOut 0.2s ease-in forwards;
+  animation: pageFadeOut 0.1s ease-in forwards;
 }
 
 @keyframes pageFadeIn {
@@ -1332,6 +1332,148 @@ body.page-exiting .site-container {
   color: var(--text-muted);
   letter-spacing: 0.05em;
   margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   Clean Personal Portal Utilities (Quick Links, Groups, Skill Pills)
+   ========================================================================== */
+.hero-quick-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 0 auto 2.5rem;
+}
+
+.quick-link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-primary);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: var(--transition-smooth);
+}
+
+.quick-link-pill:hover {
+  border-color: var(--accent-emerald);
+  color: var(--accent-emerald);
+  transform: translateY(-2px);
+}
+
+.quick-link-pill.primary {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.32);
+  color: var(--accent-emerald);
+}
+
+.quick-link-pill.primary:hover {
+  background: var(--accent-emerald);
+  color: #030611;
+}
+
+.project-group {
+  margin-bottom: 4rem;
+}
+
+.project-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.project-group-header {
+  margin-bottom: 1.75rem;
+}
+
+.project-group-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.project-group-desc {
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+}
+
+.nexus-links-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] .skill-pills {
+  border-top-color: rgba(15, 23, 42, 0.06);
+}
+
+.skill-pill {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.28rem 0.68rem;
+  border-radius: 6px;
+}
+
+[data-theme="light"] .skill-pill {
+  background: rgba(15, 23, 42, 0.04);
+  border-color: rgba(15, 23, 42, 0.09);
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.credential-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--card-radius);
+  padding: 1.75rem;
+  backdrop-filter: blur(var(--card-blur));
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.credential-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.credential-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.credential-meta {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--accent-emerald);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 /* ==========================================================================
